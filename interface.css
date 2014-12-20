@@ -8,6 +8,7 @@ body{
     list-style: none;
 	padding:0;
 	margin:0;
+	right: 5%;
 }
 
 .tabs ul li {
@@ -31,7 +32,6 @@ body{
 
 .tabs li a {
 	padding: 0 1em;
-	right: 5%;
 }
 
 .tabs a:hover {
