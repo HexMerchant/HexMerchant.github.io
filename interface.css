@@ -31,6 +31,7 @@ body{
 
 .tabs li a {
 	padding: 0 1em;
+	right: 5%;
 }
 
 .tabs a:hover {
