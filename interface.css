@@ -55,3 +55,18 @@ body{
     padding: 10px;
     
 }
+
+#resources {
+    position: fixed;
+    background: #000000;
+	border-style: solid;
+	border-color: #145266;
+   	border-width: 2px;
+			font-family: 'Anton', sans-serif;
+			font-size: 18px;
+		width: 11%;
+		left: 0%;
+		top: 0%;
+		height: 100%;
+	overflow: auto;
+}
