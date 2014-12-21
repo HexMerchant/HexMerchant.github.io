@@ -60,8 +60,8 @@ body{
     position: fixed;
     background: #000000;
 	border-style: solid;
-	border-color: #145266;
-   	border-width: 2px;
+	border-color: #2182A3;
+   	border-width: 2.5px;
 			font-family: 'Anton', sans-serif;
 			font-size: 18px;
 		width: 11%;
@@ -69,4 +69,25 @@ body{
 		top: 0%;
 		height: 100%;
 	overflow: auto;
+}
+
+#storytext {
+    position: fixed;
+    background: #000000;
+	border-style: solid;
+	border-color: #2182A3;
+   	border-width: 2.5px;
+			font-family: 'Anton', sans-serif;
+			font-size: 18px;
+		width: 650px;
+		left: 258px;
+		bottom: 230px;
+		right: 300px;
+		top: 500px;
+		height: 200px;
+	overflow: auto;
+}
+
+#locations {
+font-size: 18px;
 }
