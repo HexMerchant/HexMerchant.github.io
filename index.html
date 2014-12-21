@@ -6,8 +6,6 @@
 <link href='http://fonts.googleapis.com/css?family=Anton' rel='stylesheet' type='text/css'>
 </head>
 
-
-
 <body>
 
 <div class="tabs">
@@ -17,59 +15,48 @@
         <li><a href="#crafting">CRAFTING</a></li>
         <li><a href="#upgrades">UPGRADES</a></li>
 		<li><a href="#stats">STATS</a></li>
-       </ul>
+    </ul>
    
 <div class="tabInner">
 
     <div id="locations">
-		<button style="background-color:#ffffff" onclick="buyExplore()">Explore</button>
-		<span id="explore">0</span><br />
-		<span id="exploreCost">COST 10</span>
+		<button onclick="exploreFunction()">Explore</button>
     </div>
        
 	<div id="crafting">
-        Fire
+        
     </div>
         
 	<div id="upgrades">
-        <button style="background-color:#ffffff" onclick="learnFire(1)">Learn Fire</button>
-		<span id="learnFire">0</span>
-		<br />
-		
-		<button style="background-color:#ffffff" onclick="learnEarth(1)">
-			Learn Earth
-		</button>
-		<span id="learnEarth">0</span>
-		<br />
-		
-		<button style="background-color:#ffffff" onclick="learnAir(1)">
-			Learn Air
-		</button>
-		<span id="learnAir">0</span>
-		<br />
-		
-		<button style="background-color:#ffffff" onclick="learnWater(1)">
-			Learn Water
-		</button>
-		<span id="learnWater">0</span>
-		<br />
+
     </div>
 		
 	<div id="stats">
-		Overall Strength Gathered:
+		Strength Gathered:
 	</div>
 		
     </div>
 </div>
 
 <div id="resources">
-	<p style="color:#2182A3">RESOURCES</p>
-	<button style="background-color:#ffffff" onclick="strengthClick(1)">
-	Strength
-	</button>
-	<span id="strength">0</span>
-	<br />
+	<div id="strength">Strength:<span> 0 </span></div>
 </div>
+
+<div id="storytext">
+	<p id="story1"></p>
+</div>
+
+	<script>
+		function exploreFunction() {
+			var person = prompt("What is your name", "");
+
+			if (person != null) {
+				document.getElementById("story1").innerHTML =
+				"-You wake up lying on the ground. You feel a large deposit of energy inside you.";
+			}
+}
+
+	</script>
 	
 	<script type="text/javascript" src="main.js"></script>
 </body>
