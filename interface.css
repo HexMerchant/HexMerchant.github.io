@@ -89,5 +89,9 @@ body{
 }
 
 #locations {
-font-size: 18px;
+	font-size: 18px;
+}
+
+.label {
+	display: inline;
 }
