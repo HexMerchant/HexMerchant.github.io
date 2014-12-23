@@ -21,11 +21,20 @@
 
     <div id="locations">
 		<button id="explore" onclick="exploreFunction()">Explore</button>
-		<input type="button" value="Search Wilderness" onclick="gatherStick();">
+		
+		<input type="button" value="Search Wilderness" onclick="stickForStamina();">
+	
     </div>
        
-	<div id="crafting">
+	<div id="crafting" class="craft">
         
+		<div id = "crafting1">
+		<input type="button" value="Craft Wood" onclick="craftWood();">
+		<div class="label">Cost:</div>
+		<div id="crafting1Cost" class="label">10</div>
+		<div class="label">Sticks</div>
+		</div>
+		
     </div>
         
 	<div id="upgrades">
@@ -39,9 +48,15 @@
     </div>
 </div>
 
-<div id="resources">
-	<div class="label">STICK:</div>
-	<div id="stick" class="label">0</div>
+<div id="resources" class="resource">
+	<ul>
+		<li><div class="label">STAMINA:</div>
+		<div id="stamina" class="label">100</div></li>
+		<li><div class="label">STICK:</div>
+		<div id="stick" class="label">0</div></li>
+		<li><div class="label">WOOD:</div>
+		<div id="wood" class="label">0</div></li>
+	</ul>
 </div>
 
 <div id="storytext">
