@@ -95,3 +95,9 @@ body{
 .label {
 	display: inline;
 }
+
+.resource ul {
+    list-style: none;
+	padding:0;
+}
+
