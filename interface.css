@@ -101,3 +101,17 @@ body{
 	padding:0;
 }
 
+.save {
+	text-decoration: none;
+	position: fixed;
+	display: block;
+	background: #2182A3;
+	color: #145266;
+	text-align: center;
+		width: 85px;
+		left: 1000px;
+		bottom: 700px;
+		right: 300px;
+		top: 0px;
+		height: 65px;
+}
