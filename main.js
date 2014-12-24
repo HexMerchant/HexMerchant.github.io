@@ -1,3 +1,29 @@
+function saveGame() {
+var save = {
+stick: stick,
+rock: rock,
+wood: wood,
+stamina: stamina
+	}
+localStorage.setItem("save",JSON.stringify(save));
+}
+
+window.onload = function loadGame() {
+var savegame = JSON.parse(localStorage.getItem("save"));
+if (typeof savegame.stick !== "undefined") stick = savegame.stick;
+if (typeof savegame.rock !== "undefined") rock = savegame.rock;
+if (typeof savegame.wood !== "undefined") wood = savegame.wood;
+if (typeof savegame.stamina !== "undefined") stamina = savegame.stamina;
+document.getElementById("stick").innerHTML = stick;
+document.getElementById("rock").innerHTML = rock;
+document.getElementById("wood").innerHTML = wood;
+document.getElementById("stamina").innerHTML = stamina;
+}
+
+function deleteSave() {
+localStorage.removeItem("save")
+}
+
 var stick = 0;
 var rock = 0;
 var wood = 0;
