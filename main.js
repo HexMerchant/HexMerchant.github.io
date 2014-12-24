@@ -1,4 +1,5 @@
 var stick = 0;
+var rock = 0;
 var wood = 0;
 
 var Timer = window.setInterval(function(){tick()}, 1000);
@@ -30,14 +31,26 @@ function exploreFunction() {
   }
 }
 
-function stickForStamina(){
-	if (stamina > 0) {
-	stamina = stamina - 1;
+function getRandomInt(min, max) {
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function wildernessForStamina(){
+	var num = getRandomInt(1, 10);
+	if (stamina > 1 && num <= 9) {
+	stamina = stamina - 2;
+	stick = stick + 1;
+	rock = rock + 1;
+	document.getElementById("stamina").innerHTML = stamina;
+	document.getElementById("stick").innerHTML = stick;
+	document.getElementById("rock").innerHTML = rock;
+	}
+	else if (stamina > 1 && num <=10) {
+	stamina = stamina - 2;
 	stick = stick + 1;
 	document.getElementById("stamina").innerHTML = stamina;
 	document.getElementById("stick").innerHTML = stick;
 	}
-	
 }
 
 function craftWood() {
