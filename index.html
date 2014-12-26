@@ -1,180 +1,109 @@
-body{
-	font-family: 'Anton', sans-serif;
-	font-size: 18px;
-	background: black;
-	color: #2182A3;
+function saveGame() {
+var save = {
+stick: stick,
+rock: rock,
+wood: wood,
+stamina: stamina
+	}
+localStorage.setItem("save",JSON.stringify(save));
 }
 
-.tabs ul {
-    list-style: none;
-	padding:0;
-		margin-right: 50px;
-		margin-left: 250px;
+window.onload = function loadGame() {
+var savegame = JSON.parse(localStorage.getItem("save"));
+if (typeof savegame.stick !== "undefined") stick = savegame.stick;
+if (typeof savegame.rock !== "undefined") rock = savegame.rock;
+if (typeof savegame.wood !== "undefined") wood = savegame.wood;
+if (typeof savegame.stamina !== "undefined") stamina = savegame.stamina;
+document.getElementById("stick").innerHTML = stick;
+document.getElementById("rock").innerHTML = rock;
+document.getElementById("wood").innerHTML = wood;
+document.getElementById("stamina").innerHTML = stamina;
 }
 
-.tabs ul li {
-    float: left;
-    background: #2182A3
-    border: 2px #175B72; solid;
-    border-bottom-width: 0;
-    margin: 0 0.5em 0 0;
-    padding: 5px;
+function deleteSave() {
+localStorage.removeItem("save")
 }
 
-.tabs a {
-	text-decoration: none;
-	display: block;
-	background: #000000;
-	padding: 0.10em 0.80em;
-	color: #145266;
-	width: 6em;
-	text-align: center;
+var stick = 0;
+var rock = 0;
+var wood = 0;
+var health = 50;
+var strength = 0;
+var intelligence = 0;
+var poise= 0;
+var reflex = 0;
+var fire = 0;
+var water = 0;
+var earth = 0;
+var air = 0;
+
+var Timer = window.setInterval(function(){tick()}, 1000);
+
+var current = 0;
+var person;
+var story = ["-You wake up lying on the ground. You feel a large deposit \
+of energy inside you.", "-You look around only to see a thicket of trees.", "-You begin to walk around looking for anything that may help."];
+
+var stamina = 100;
+
+var crafting1Name = "Craft Wood";
+var crafting1Cost = 10;
+
+function regenStamina() {
+	if (stamina < 100) {
+	tick();
+	document.getElementById("stamina").innerHTML = stamina;
+	}
 }
 
-.tabs li a {
-	padding: 0 1em;
+function exploreFunction() {
+	if (current == 0) {
+		person = prompt("What is your name", "");
+	}
+	if (person != null && current < story.length) {
+		document.getElementById("story1").innerHTML = story[current];
+	current += 1;
+  }
 }
 
-.tabs a:hover {
-	background: #52A3CC;
+function getRandomInt(min, max) {
+	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-.tabInner {
-    clear: both;
-    border: 2px solid #2182A3;
-		margin-right: 1px;
-		margin-left: 250px;
-    height: 400px;
-	width: 650px;
-    overflow: hidden;
-    background: black;
+function wildernessForStamina(){
+	var num = getRandomInt(1, 10);
+	if (stamina > 1 && num <= 9) {
+	stamina = stamina - 2;
+	stick = stick + 1;
+	rock = rock + 1;
+	document.getElementById("stamina").innerHTML = stamina;
+	document.getElementById("stick").innerHTML = stick;
+	document.getElementById("rock").innerHTML = rock;
+	}
+	else if (stamina > 1 && num <=10) {
+	stamina = stamina - 2;
+	stick = stick + 1;
+	document.getElementById("stamina").innerHTML = stamina;
+	document.getElementById("stick").innerHTML = stick;
+	}
 }
 
-.tabInner div {
-    height: 400px;
-    padding: 10px;
-    
+function craftWood() {
+	if (stick >= crafting1Cost) {
+	stick = stick - crafting1Cost;
+	wood = wood + 1;
+	document.getElementById("stick").innerHTML = stick;
+	document.getElementById("wood").innerHTML = wood;
+	}
 }
 
-#resources {
-    position: relative;
-    background: black;
-	border-style: solid;
-	border-color: #2182A3;
-   	border-width: 2.5px;
-			font-family: 'Anton', sans-serif;
-			font-size: 18px;
-		width: 11%;
-		left: 0%;
-		top: -403px;
-		height: 100%;
-	overflow: auto;
+function tick() {
+ if (stamina < 100)
+	stamina = stamina + 1;
+ document.getElementById("stamina").innerHTML = stamina;
 }
 
-.resource ul {
-    list-style: none;
-	padding-left: 10px;
-}
+window.setInterval(function() {
 
-#characterStats {
-    position: relative;
-    background: black;
-	border-style: solid;
-	border-color: #2182A3;
-   	border-width: 2.5px;
-			font-family: 'Anton', sans-serif;
-			font-size: 18px;		
-		width: 11%;
-		right: -940px;
-		top: -620px;
-	overflow: auto;
-}
+}, 1000);
 
-.characterstat ul {
-    list-style: none;
-	padding-left: 10px;
-}
-
-#storytext {
-    position: fixed;
-    background: black;
-	border-style: solid;
-	border-color: #2182A3;
-   	border-width: 2.5px;
-			font-family: 'Anton', sans-serif;
-			font-size: 18px;
-		width: 650px;
-		left: 258px;
-		bottom: 230px;
-		right: 300px;
-		top: 500px;
-		height: 200px;
-	overflow: auto;
-}
-
-#locations {
-	font-size: 18px;
-}
-
-.label {
-	display: inline;
-}
-
-.save {
-	text-decoration: none;
-	position: fixed;
-	display: inline;
-		width: 150px;
-		left: 1000px;
-		bottom: 700px;
-		right: 300px;
-		top: 0px;
-}
-
-.save a {
-	color: #145266;
-}
-
-.craft {
-
-}
-
-a.tooltips {
-  position: relative;
-  display: inline;
-}
-a.tooltips span {
-  position: absolute;
-  width:100px;
-  color: #145266;
-  background: #2182A3;
-  border: 2px solid #145266;
-  height: 22px;
-  line-height: 22px;
-  text-align: center;
-  visibility: hidden;
-}
-a.tooltips span:before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  right: 100%;
-  margin-left: -12px;
-  width: 0; height: 0;
-}
-a.tooltips span:after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  right: 100%;
-  margin-left: -8px;
-  width: 0; height: 0;
-}
-a:hover.tooltips span {
-  visibility: visible;
-  left: 100%;
-  top: 50%;
-  margin-top: -11px;
-  margin-left: 15px;
-  z-index: 999;
-}
