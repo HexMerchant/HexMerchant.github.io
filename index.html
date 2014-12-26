@@ -8,14 +8,14 @@
 
 <body>
 <div class="save">
-<input type="button" value="Save" onclick="saveGame();">
-<input type="button" value="Delete Save" onclick="deleteSave();">
+<a href="#" onclick="saveGame();">Save</a>
+<a href="#" onclick="deleteSave();">Delete Save</a>
 </div>
 
 <div class="tabs">
 
     <ul>
-		<li><a href="#locations">LOCATIONS</a></li>
+		<li><a href="#locations">LOCATIONS</a></li>		
         <li><a href="#crafting">CRAFTING</a></li>
         <li><a href="#upgrades">UPGRADES</a></li>
 		<li><a href="#stats">STATS</a></li>
@@ -24,19 +24,15 @@
 <div class="tabInner">
 
     <div id="locations">
-		<button id="explore" onclick="exploreFunction()">Explore</button>
-		
-		<input type="button" value="Search Wilderness" onclick="wildernessForStamina();">
-		
-    </div>
+		<a class="tooltips" id="explore" href="#" onclick="exploreFunction();">Explore</a>
+		<a class="tooltips" id="explore" href="#" onclick="wildernessForStamina();">Search Wilderness</a>
+	</div>
        
 	<div id="crafting" class="craft">
         
 		<div id = "crafting1">
-		<input type="button" value="Craft Wood" onclick="craftWood();">
-		<div class="label">Cost:</div>
-		<div id="crafting1Cost" class="label">10</div>
-		<div class="label">Sticks</div>
+		<a class="tooltips" href="#" onclick="craftWood();">Craft Wood
+		<span>10 Sticks</span></a>
 		</div>
 		
     </div>
@@ -53,6 +49,7 @@
 </div>
 
 <div id="resources" class="resource">
+	<p><font size="6">RESOURCES</font></p>
 	<ul>
 		<li><div class="label">STAMINA:</div>
 		<div id="stamina" class="label">100</div></li>
@@ -64,6 +61,23 @@
 		<div id="wood" class="label">0</div></li>
 	</ul>
 </div>
+
+<div id="characterStats" class="characterstat">
+	<p><font size="5.5">CHARACTER STATS</font><p>
+	<ul>
+		<li><div class="label">HEALTH:</div>
+		<div id="health" class="label">50</div></li>
+		<li><div class="label">STRENGTH:</div>
+		<div id="strength" class="label">0</div></li>
+		<li><div class="label">INTELLIGENCE:</div>
+		<div id="intelligence" class="label">0</div></li>
+		<li><div class="label">POISE:</div>
+		<div id="poise" class="label">0</div></li>
+		<li><div class="label">SPEED:</div>
+		<div id="speed" class="label">0</div></li>
+	</ul>
+</div>
+
 
 <div id="storytext">
 	<div id="story1"></div>
