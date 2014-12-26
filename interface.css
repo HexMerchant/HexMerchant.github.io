@@ -1,7 +1,7 @@
 body{
 	font-family: 'Anton', sans-serif;
 	font-size: 18px;
-	background: #000000;
+	background: black;
 	color: #2182A3;
 }
 
@@ -24,8 +24,8 @@ body{
 .tabs a {
 	text-decoration: none;
 	display: block;
-	background: #2182A3;
-	padding: 0.24em 1em;
+	background: #000000;
+	padding: 0.10em 0.80em;
 	color: #145266;
 	width: 6em;
 	text-align: center;
@@ -47,7 +47,7 @@ body{
     height: 400px;
 	width: 650px;
     overflow: hidden;
-    background: #000000;
+    background: black;
 }
 
 .tabInner div {
@@ -57,8 +57,8 @@ body{
 }
 
 #resources {
-    position: fixed;
-    background: #000000;
+    position: relative;
+    background: black;
 	border-style: solid;
 	border-color: #2182A3;
    	border-width: 2.5px;
@@ -66,14 +66,38 @@ body{
 			font-size: 18px;
 		width: 11%;
 		left: 0%;
-		top: 0%;
+		top: -403px;
 		height: 100%;
 	overflow: auto;
 }
 
+.resource ul {
+    list-style: none;
+	padding-left: 10px;
+}
+
+#characterStats {
+    position: relative;
+    background: black;
+	border-style: solid;
+	border-color: #2182A3;
+   	border-width: 2.5px;
+			font-family: 'Anton', sans-serif;
+			font-size: 18px;		
+		width: 11%;
+		right: -940px;
+		top: -620px;
+	overflow: auto;
+}
+
+.characterstat ul {
+    list-style: none;
+	padding-left: 10px;
+}
+
 #storytext {
     position: fixed;
-    background: #000000;
+    background: black;
 	border-style: solid;
 	border-color: #2182A3;
    	border-width: 2.5px;
@@ -96,22 +120,61 @@ body{
 	display: inline;
 }
 
-.resource ul {
-    list-style: none;
-	padding:0;
-}
-
 .save {
 	text-decoration: none;
 	position: fixed;
-	display: block;
-	background: #2182A3;
-	color: #145266;
-	text-align: center;
-		width: 85px;
+	display: inline;
+		width: 150px;
 		left: 1000px;
 		bottom: 700px;
 		right: 300px;
 		top: 0px;
-		height: 65px;
+}
+
+.save a {
+	color: #145266;
+}
+
+.craft {
+
+}
+
+a.tooltips {
+  position: relative;
+  display: inline;
+}
+a.tooltips span {
+  position: absolute;
+  width:100px;
+  color: #145266;
+  background: #2182A3;
+  border: 2px solid #145266;
+  height: 22px;
+  line-height: 22px;
+  text-align: center;
+  visibility: hidden;
+}
+a.tooltips span:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-left: -12px;
+  width: 0; height: 0;
+}
+a.tooltips span:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-left: -8px;
+  width: 0; height: 0;
+}
+a:hover.tooltips span {
+  visibility: visible;
+  left: 100%;
+  top: 50%;
+  margin-top: -11px;
+  margin-left: 15px;
+  z-index: 999;
 }
