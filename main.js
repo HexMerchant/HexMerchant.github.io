@@ -27,6 +27,15 @@ localStorage.removeItem("save")
 var stick = 0;
 var rock = 0;
 var wood = 0;
+var health = 50;
+var strength = 0;
+var intelligence = 0;
+var poise= 0;
+var reflex = 0;
+var fire = 0;
+var water = 0;
+var earth = 0;
+var air = 0;
 
 var Timer = window.setInterval(function(){tick()}, 1000);
 
@@ -84,7 +93,6 @@ function craftWood() {
 	stick = stick - crafting1Cost;
 	wood = wood + 1;
 	document.getElementById("stick").innerHTML = stick;
-	document.getElementById("crafting1Cost").innerHTML = crafting1Cost;
 	document.getElementById("wood").innerHTML = wood;
 	}
 }
