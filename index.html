@@ -1,90 +1,180 @@
-<!DOCTYPE html>
-<html lang="en-US">
-<head>
-<title>Elemental Bound</title>
-<link rel="stylesheet" type="text/css" href="interface.css" />
-<link href='http://fonts.googleapis.com/css?family=Anton' rel='stylesheet' type='text/css'>
-</head>
+body{
+	font-family: 'Anton', sans-serif;
+	font-size: 18px;
+	background: black;
+	color: #2182A3;
+}
 
-<body>
-<div class="save">
-<a href="#" onclick="saveGame();">Save</a>
-<a href="#" onclick="deleteSave();">Delete Save</a>
-</div>
+.tabs ul {
+    list-style: none;
+	padding:0;
+		margin-right: 50px;
+		margin-left: 250px;
+}
 
-<div class="tabs">
+.tabs ul li {
+    float: left;
+    background: #2182A3
+    border: 2px #175B72; solid;
+    border-bottom-width: 0;
+    margin: 0 0.5em 0 0;
+    padding: 5px;
+}
 
-    <ul>
-		<li><a href="#locations">LOCATIONS</a></li>		
-        <li><a href="#crafting">CRAFTING</a></li>
-        <li><a href="#upgrades">UPGRADES</a></li>
-		<li><a href="#stats">STATS</a></li>
-    </ul>
-   
-<div class="tabInner">
+.tabs a {
+	text-decoration: none;
+	display: block;
+	background: #000000;
+	padding: 0.10em 0.80em;
+	color: #145266;
+	width: 6em;
+	text-align: center;
+}
 
-    <div id="locations">
-		<a class="tooltips" id="explore" href="#" onclick="exploreFunction();">Explore</a>
-		<a class="tooltips" id="explore" href="#" onclick="wildernessForStamina();">Search Wilderness</a>
-	</div>
-       
-	<div id="crafting" class="craft">
-        
-		<div id = "crafting1">
-		<a class="tooltips" href="#" onclick="craftWood();">Craft Wood
-		<span>10 Sticks</span></a>
-		</div>
-		
-    </div>
-        
-	<div id="upgrades">
+.tabs li a {
+	padding: 0 1em;
+}
 
-    </div>
-		
-	<div id="stats">
-		Strength Gathered:
-	</div>
-		
-    </div>
-</div>
+.tabs a:hover {
+	background: #52A3CC;
+}
 
-<div id="resources" class="resource">
-	<p><font size="6">RESOURCES</font></p>
-	<ul>
-		<li><div class="label">STAMINA:</div>
-		<div id="stamina" class="label">100</div></li>
-		<li><div class="label">STICK:</div>
-		<div id="stick" class="label">0</div></li>
-		<li><div class="label">ROCK:</div>
-		<div id="rock" class="label">0</div></li>
-		<li><div class="label">WOOD:</div>
-		<div id="wood" class="label">0</div></li>
-	</ul>
-</div>
+.tabInner {
+    clear: both;
+    border: 2px solid #2182A3;
+		margin-right: 1px;
+		margin-left: 250px;
+    height: 400px;
+	width: 650px;
+    overflow: hidden;
+    background: black;
+}
 
-<div id="characterStats" class="characterstat">
-	<p><font size="5.5">CHARACTER STATS</font><p>
-	<ul>
-		<li><div class="label">HEALTH:</div>
-		<div id="health" class="label">50</div></li>
-		<li><div class="label">STRENGTH:</div>
-		<div id="strength" class="label">0</div></li>
-		<li><div class="label">INTELLIGENCE:</div>
-		<div id="intelligence" class="label">0</div></li>
-		<li><div class="label">POISE:</div>
-		<div id="poise" class="label">0</div></li>
-		<li><div class="label">SPEED:</div>
-		<div id="speed" class="label">0</div></li>
-	</ul>
-</div>
+.tabInner div {
+    height: 400px;
+    padding: 10px;
+    
+}
 
+#resources {
+    position: relative;
+    background: black;
+	border-style: solid;
+	border-color: #2182A3;
+   	border-width: 2.5px;
+			font-family: 'Anton', sans-serif;
+			font-size: 18px;
+		width: 11%;
+		left: 0%;
+		top: -403px;
+		height: 100%;
+	overflow: auto;
+}
 
-<div id="storytext">
-	<div id="story1"></div>
+.resource ul {
+    list-style: none;
+	padding-left: 10px;
+}
 
-</div>
-	
-	<script type="text/javascript" src="main.js"></script>
-</body>
+#characterStats {
+    position: relative;
+    background: black;
+	border-style: solid;
+	border-color: #2182A3;
+   	border-width: 2.5px;
+			font-family: 'Anton', sans-serif;
+			font-size: 18px;		
+		width: 11%;
+		right: -940px;
+		top: -620px;
+	overflow: auto;
+}
 
-</html>
+.characterstat ul {
+    list-style: none;
+	padding-left: 10px;
+}
+
+#storytext {
+    position: fixed;
+    background: black;
+	border-style: solid;
+	border-color: #2182A3;
+   	border-width: 2.5px;
+			font-family: 'Anton', sans-serif;
+			font-size: 18px;
+		width: 650px;
+		left: 258px;
+		bottom: 230px;
+		right: 300px;
+		top: 500px;
+		height: 200px;
+	overflow: auto;
+}
+
+#locations {
+	font-size: 18px;
+}
+
+.label {
+	display: inline;
+}
+
+.save {
+	text-decoration: none;
+	position: fixed;
+	display: inline;
+		width: 150px;
+		left: 1000px;
+		bottom: 700px;
+		right: 300px;
+		top: 0px;
+}
+
+.save a {
+	color: #145266;
+}
+
+.craft {
+
+}
+
+a.tooltips {
+  position: relative;
+  display: inline;
+}
+a.tooltips span {
+  position: absolute;
+  width:100px;
+  color: #145266;
+  background: #2182A3;
+  border: 2px solid #145266;
+  height: 22px;
+  line-height: 22px;
+  text-align: center;
+  visibility: hidden;
+}
+a.tooltips span:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-left: -12px;
+  width: 0; height: 0;
+}
+a.tooltips span:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-left: -8px;
+  width: 0; height: 0;
+}
+a:hover.tooltips span {
+  visibility: visible;
+  left: 100%;
+  top: 50%;
+  margin-top: -11px;
+  margin-left: 15px;
+  z-index: 999;
+}
