@@ -11,7 +11,6 @@ body{
 		margin-right: 50px;
 		margin-left: 250px;
 }
-
 .tabs ul li {
     float: left;
     background: #2182A3
@@ -20,7 +19,6 @@ body{
     margin: 0 0.5em 0 0;
     padding: 5px;
 }
-
 .tabs a {
 	text-decoration: none;
 	display: block;
@@ -30,15 +28,12 @@ body{
 	width: 6em;
 	text-align: center;
 }
-
 .tabs li a {
 	padding: 0 1em;
 }
-
 .tabs a:hover {
 	background: #52A3CC;
 }
-
 .tabInner {
     clear: both;
     border: 2px solid #2182A3;
@@ -49,8 +44,53 @@ body{
     overflow: hidden;
     background: black;
 }
-
 .tabInner div {
+    height: 400px;
+    padding: 10px;
+    
+}
+
+.tabs1 ul {
+    list-style: none;
+	padding:0;
+		margin-right: 50px;
+		margin-left: 1150px;
+		margin-top: -500px;
+}
+.tabs1 ul li {
+    float: left;
+    background: #2182A3
+    border: 2px #175B72; solid;
+    border-bottom-width: 0;
+    margin: 0 0.5em 0 0;
+    padding: 5px;
+}
+.tabs1 a {
+	text-decoration: none;
+	display: block;
+	background: #000000;
+	padding: 0.10em 0.80em;
+	color: #145266;
+	width: 6em;
+	text-align: center;
+}
+.tabs1 li a {
+	padding: 0 1em;
+}
+.tabs1 a:hover {
+	background: #52A3CC;
+}
+.tabInner1 {
+    clear: both;
+    border: 2px solid #2182A3;
+		margin-right: 50px;
+		margin-left: 1150px;
+    height: 400px;
+	width: 650px;
+    overflow: hidden;
+    background: black;
+}
+.tabInner1 div {
     height: 400px;
     padding: 10px;
     
@@ -64,13 +104,12 @@ body{
    	border-width: 2.5px;
 			font-family: 'Anton', sans-serif;
 			font-size: 18px;
-		width: 11%;
+		width: 12%;
 		left: 0%;
-		top: -403px;
+		top: -404px;
 		height: 100%;
 	overflow: auto;
 }
-
 .resource ul {
     list-style: none;
 	padding-left: 10px;
@@ -85,11 +124,10 @@ body{
 			font-family: 'Anton', sans-serif;
 			font-size: 18px;		
 		width: 11%;
-		right: -940px;
-		top: -620px;
+		right: -920px;
+		top: -606px;
 	overflow: auto;
 }
-
 .characterstat ul {
     list-style: none;
 	padding-left: 10px;
@@ -130,13 +168,8 @@ body{
 		right: 300px;
 		top: 0px;
 }
-
 .save a {
 	color: #145266;
-}
-
-.craft {
-
 }
 
 a.tooltips {
@@ -145,11 +178,11 @@ a.tooltips {
 }
 a.tooltips span {
   position: absolute;
-  width:100px;
+  width:175px;
   color: #145266;
-  background: #2182A3;
+  background: black;
   border: 2px solid #145266;
-  height: 22px;
+  height: 175px;
   line-height: 22px;
   text-align: center;
   visibility: hidden;
@@ -177,4 +210,8 @@ a:hover.tooltips span {
   margin-top: -11px;
   margin-left: 15px;
   z-index: 999;
+}
+
+.craft div {
+padding: 10px;
 }
