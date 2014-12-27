@@ -7,6 +7,7 @@
 </head>
 
 <body>
+
 <div class="save">
 <a href="#" onclick="saveGame();">Save</a>
 <a href="#" onclick="deleteSave();">Delete Save</a>
@@ -25,14 +26,14 @@
 
     <div id="locations">
 		<a class="tooltips" id="explore" href="#" onclick="exploreFunction();">Explore</a>
-		<a class="tooltips" id="explore" href="#" onclick="wildernessForStamina();">Search Wilderness</a>
+		<a class="tooltips" id="wFS" href="#" onclick="wildernessForStamina();">Search Wilderness</a>
 	</div>
        
 	<div id="crafting" class="craft">
         
-		<div id = "crafting1">
-		<a class="tooltips" href="#" onclick="craftWood();">Craft Wood
-		<span>10 Sticks</span></a>
+		<div id = "crafting">
+		<a class="tooltips" id="crafting1" href="#" onclick="craftWood();">Craft Wood<span>10 Sticks</span></a>
+		<a class="tooltips" id="crafting2" href="#" onclick="craftBluntObject();">Blunt Object<span>13 Sticks</span></a>
 		</div>
 		
     </div>
@@ -48,8 +49,44 @@
     </div>
 </div>
 
+<div class="tabs1">
+
+    <ul>
+		<li><a href="#village">VILLAGE</a></li>	
+        <li><a href="#research">RESEARCH</a></li>
+        <li><a href="#profession">PROFESSION</a></li>
+		<li><a href="#achievements">ACHIEVEMENTS</a></li>
+    </ul>
+   
+<div class="tabInner1">
+
+	<div id="village">
+		
+	</div>
+       
+	<div id="research">
+        
+		<div id = "research1">
+		<a class="tooltips" href="#research" onclick="researchStick();">Research Stick
+		<span>Looks like a normal stick. I should research it more.</span></a>
+		</div>
+		
+    </div>
+        
+	<div id="profession">
+	
+    </div>
+		
+	<div id="achievements">
+
+	</div>
+		
+    </div>
+</div>
+
+
 <div id="resources" class="resource">
-	<p><font size="6">RESOURCES</font></p>
+	<p><font size="5.5">RESOURCES</font></p>
 	<ul>
 		<li><div class="label">STAMINA:</div>
 		<div id="stamina" class="label">100</div></li>
@@ -78,10 +115,8 @@
 	</ul>
 </div>
 
-
 <div id="storytext">
 	<div id="story1"></div>
-
 </div>
 	
 	<script type="text/javascript" src="main.js"></script>
