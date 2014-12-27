@@ -1,29 +1,16 @@
-function saveGame() {
-var save = {
-stick: stick,
-rock: rock,
-wood: wood,
-stamina: stamina
-	}
-localStorage.setItem("save",JSON.stringify(save));
-}
+/*
+Elemental Bound
 
-window.onload = function loadGame() {
-var savegame = JSON.parse(localStorage.getItem("save"));
-if (typeof savegame.stick !== "undefined") stick = savegame.stick;
-if (typeof savegame.rock !== "undefined") rock = savegame.rock;
-if (typeof savegame.wood !== "undefined") wood = savegame.wood;
-if (typeof savegame.stamina !== "undefined") stamina = savegame.stamina;
-document.getElementById("stick").innerHTML = stick;
-document.getElementById("rock").innerHTML = rock;
-document.getElementById("wood").innerHTML = wood;
-document.getElementById("stamina").innerHTML = stamina;
-}
+TODO :
+Make a text to appear when you hover an object. [50% complete]
+Work more on the progress bar.
+Make a research function						[10% complete]
+Make an Action function
+Make an achievement
+Make a profession
+Add a single stat "how many sticks have you gathered"
 
-function deleteSave() {
-localStorage.removeItem("save")
-}
-
+*/
 var stick = 0;
 var rock = 0;
 var wood = 0;
@@ -48,6 +35,37 @@ var stamina = 100;
 
 var crafting1Name = "Craft Wood";
 var crafting1Cost = 10;
+
+var research1Progress = 0;
+
+function saveGame() {
+var save = {
+stick: stick,
+rock: rock,
+wood: wood,
+stamina: stamina,
+current: current,
+person: person,
+story: story
+	}
+localStorage.setItem("save",JSON.stringify(save));
+}
+
+window.onload = function loadGame() {
+var savegame = JSON.parse(localStorage.getItem("save"));
+if (typeof savegame.stick !== "undefined") stick = savegame.stick;
+if (typeof savegame.rock !== "undefined") rock = savegame.rock;
+if (typeof savegame.wood !== "undefined") wood = savegame.wood;
+if (typeof savegame.stamina !== "undefined") stamina = savegame.stamina;
+document.getElementById("stick").innerHTML = stick;
+document.getElementById("rock").innerHTML = rock;
+document.getElementById("wood").innerHTML = wood;
+document.getElementById("stamina").innerHTML = stamina;
+}
+
+function deleteSave() {
+localStorage.removeItem("save")
+}
 
 function regenStamina() {
 	if (stamina < 100) {
@@ -83,11 +101,10 @@ function wildernessForStamina(){
 	else if (stamina > 1 && num <=10) {
 	stamina = stamina - 2;
 	stick = stick + 1;
-	document.getElementById("stamina").innerHTML = stamina;
 	document.getElementById("stick").innerHTML = stick;
 	}
 }
-
+// Crafting
 function craftWood() {
 	if (stick >= crafting1Cost) {
 	stick = stick - crafting1Cost;
@@ -103,7 +120,23 @@ function tick() {
  document.getElementById("stamina").innerHTML = stamina;
 }
 
+//Hide and Show Divs
+
+//Hide and Show Divs
+
+function researchStick() {
+	if (stick > 1 && research1Progress < 100)
+	stick = stick - 1;										// each time you click me I want to use 1 stick
+	research1Progress = research1Progress + 5;				// each stick brings research progress up 5
+	document.getElementById("stick").innerHTML = stick;
+	
+//Want to be able to show progress
+// when research hits 100 unlocks blunt object for crafting
+// this clickable button should hide after completion
+// add achievement for first research project
+}
+		
+
 window.setInterval(function() {
 
 }, 1000);
-
