@@ -33,8 +33,9 @@
         
 		<div id = "crafting">
 		<a class="tooltips" id="crafting1" href="#" onclick="craftWood();">Craft Wood<span>10 Sticks</span></a>
-		<a class="tooltips" id="crafting2" href="#" onclick="craftBluntObject();">Blunt Object<span>13 Sticks</span></a>
-		</div>
+		<a class="tooltips" id="crafting2" href="#" style="display:none;" onclick="craftBluntObject();">Blunt Object<span>13 Sticks</span></a>
+	</div>
+</div>
 		
     </div>
         
@@ -43,7 +44,7 @@
     </div>
 		
 	<div id="stats">
-		Strength Gathered:
+
 	</div>
 		
     </div>
@@ -90,12 +91,16 @@
 	<ul>
 		<li><div class="label">STAMINA:</div>
 		<div id="stamina" class="label">100</div></li>
+		<li><div class="label">FLUX:</div>
+		<div id="flux" class="label">0</div></li>
 		<li><div class="label">STICK:</div>
 		<div id="stick" class="label">0</div></li>
 		<li><div class="label">ROCK:</div>
 		<div id="rock" class="label">0</div></li>
 		<li><div class="label">WOOD:</div>
 		<div id="wood" class="label">0</div></li>
+		<li><div id="bluntObjectName" style="display:none;" class="label">BLUNT OBJECT:</div>
+		<div id="bluntObjectValue" style="display:none;" class="label">0</div></li>
 	</ul>
 </div>
 
