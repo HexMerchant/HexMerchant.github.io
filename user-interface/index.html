@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Elemental Bound - User Interface</title>
+	<!-- Loading jQuery + Bootstrap CSS & JS + Custom CSS -->
+	<script src="src/jquery-1.11.1.min.js"></script>
+	<link rel="stylesheet" href="src/bootstrap.min.css">
+	<script src="src/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<h1>Elemental Bound - User Interface Prototype</h1>
+
+	<!-- container-fluid class make that the columns got a margin on left and right. -->
+	<div class="container-fluid">
+		<div class="row">
+			<!-- Here are 2 columns (col-md-6) where you can put everything, if we want, we can make 6 little columns or 2 big columns. -->
+			<!-- To understand more the grid system of Bootstrap, take a look here : http://getbootstrap.com/css/#grid -->
+			<div class="col-md-6">
+				<!-- Here I'm using Bootstrap nav tabs, take a look here : http://getbootstrap.com/javascript/#tabs
+				and here : http://getbootstrap.com/components/#nav -->
+			  <ul class="nav nav-tabs nav-justified" role="tablist">
+			    <li role="presentation" class="active"><a href="#tab-loc" aria-controls="tab-loc" role="tab" data-toggle="tab">Locations</a></li>
+			    <li role="presentation"><a href="#tab-craft" aria-controls="tab-craft" role="tab" data-toggle="tab">Crafting</a></li>
+			    <li role="presentation"><a href="#tab-up" aria-controls="tab-up" role="tab" data-toggle="tab">Upgrades</a></li>
+			    <li role="presentation"><a href="#tab-stats" aria-controls="tab-stats" role="tab" data-toggle="tab">Stats</a></li>
+			  </ul>
+			  <div class="tab-content">
+			    <div role="tabpanel" class="tab-pane active" id="tab-loc"><h1>Locations</h1></div>
+			    <div role="tabpanel" class="tab-pane" id="tab-craft"><h1>Crafting</h1></div>
+			    <div role="tabpanel" class="tab-pane" id="tab-up"><h1>Upgrades</h1></div>
+			    <div role="tabpanel" class="tab-pane" id="tab-stats"><h1>Player stats</h1></div>
+			  </div>
+			</div>
+			<div class="col-md-6">
+			<!-- Bootstrap nav tabs again in the other column. -->
+			  <ul class="nav nav-tabs nav-justified" role="tablist">
+			    <li role="presentation" class="active"><a href="#tab-city" aria-controls="tab-city" role="tab" data-toggle="tab">Village</a></li>
+			    <li role="presentation"><a href="#tab-res" aria-controls="tab-res" role="tab" data-toggle="tab">Research</a></li>
+			    <li role="presentation"><a href="#tab-prof" aria-controls="tab-prof" role="tab" data-toggle="tab">Profession</a></li>
+			    <li role="presentation"><a href="#tab-ach" aria-controls="tab-ach" role="tab" data-toggle="tab">Achievements</a></li>
+			  </ul>
+			  <div class="tab-content">
+			    <div role="tabpanel" class="tab-pane active" id="tab-city"><h1>Village</h1></div>
+			    <div role="tabpanel" class="tab-pane" id="tab-res"><h1>Research</h1></div>
+			    <div role="tabpanel" class="tab-pane" id="tab-prof"><h1>Profession</h1></div>
+			    <div role="tabpanel" class="tab-pane" id="tab-ach"><h1>Achievements</h1></div>
+			  </div>
+			</div>
+			<!-- End of column -->
+		</div>
+		<!-- End of row -->
+	</div>
+	<!-- End of container-fluid -->
+</body>
+</html>

@@ -1,0 +1,11 @@
+body {
+	margin: 0;
+	font-family: 'Consolas';
+	color: #fff;
+	background: #333;
+}
+h1 {
+	margin: 0 0 10px 0;
+	font-size: 32px;
+	text-align: center;
+}
