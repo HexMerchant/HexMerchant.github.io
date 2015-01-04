@@ -1,136 +1,171 @@
 body{
 	font-family: 'Anton', sans-serif;
-	font-size: 18px;
+	font-size: 22px;
 	background: black;
+	color: #145266;
+}
+
+.save {
+	text-decoration: none;
+	position: relative;
+	display: inline;
+	margin-right: 10%;
+}
+.save a {
+	color: #145266;
+}
+
+.resources {
+	position: absolute;
+	border:2px solid #2182A3;
+}
+.resources p {
+	padding-left: 12px;
+}
+.resources ul {
+    list-style: none;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.label {
 	color: #2182A3;
+	display: inline;
 }
 
-.tabs ul {
-    list-style: none;
-	padding:0;
-		margin-right: 50px;
-		margin-left: 250px;
+.tabs {
+	list-style-type: none;
+	padding:1;
+	margin:0;
+	margin-top: 10px;
+	margin-left: 10%;
+	position:relative;
 }
-.tabs ul li {
-    float: left;
-    background: #2182A3
-    border: 2px #175B72; solid;
-    border-bottom-width: 0;
-    margin: 0 0.5em 0 0;
-    padding: 5px;
+.tabs:after {
+	content: "";
+	clear:both;
+	display:block;
+	height:242px;
 }
-.tabs a {
-	text-decoration: none;
-	display: block;
-	background: #000000;
-	padding: 0.10em 0.80em;
+.tabs li {
+	float:left;
+	margin-left:50px;
+}
+.tabs li > input {
+	display:none;
+}
+.tabs li > label {
+	display:inline-block;
+	border:2px solid #2182A3;
+	border-bottom-width:0px;
+	height:30px;
+	line-height:30px;
+	padding: 5px 20px;
+	cursor:pointer;
+}
+.tabs .tab-content {
+	display:none;
+	position:absolute;
+	left:0;
+	padding:15px;
+	border:2px solid #2182A3;
+	height:380px;
+	width:900px;
+	overflow-y:scroll;
+}
+
+button
+{
+	display: inline;
+	font-size: 0.8em;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding: 8px 12px;
+	margin: 20px auto;
 	color: #145266;
-	width: 6em;
-	text-align: center;
+	background-color: #2182A3;
+	background: -webkit-linear-gradient(#555;, #888;);
+	background: linear-gradient(#888;, #555;);
+	border: 0 none;
+	border-radius: 1px;
+	text-shadow: 0 -1px 0 #000;
+	box-shadow: 0 1px 0 #666, 0 5px 0 #444, 0 6px 6px rgba(0,0,0,0.6);
+	cursor: pointer;
+	-webkit-transition: all 150ms ease;
+	transition: all 150ms ease;
 }
-.tabs li a {
-	padding: 0 1em;
+button:hover, button:focus
+{
+	-webkit-animation: pulsate 1.2s linear infinite;
+	animation: pulsate 1.2s linear infinite;
 }
-.tabs a:hover {
-	background: #52A3CC;
-}
-.tabInner {
-    clear: both;
-    border: 2px solid #2182A3;
-		margin-right: 1px;
-		margin-left: 250px;
-    height: 400px;
-	width: 650px;
-    overflow: hidden;
-    background: black;
-}
-.tabInner div {
-    height: 400px;
-    padding: 10px;
-    
+button:active
+{
+	color: #fff;
+	text-shadow: 0 -1px 0 #444, 0 0 5px #ffd, 0 0 8px #fff;
+	box-shadow: 0 1px 0 #666, 0 2px 0 #444, 0 2px 2px rgba(0,0,0,0.9);
+	-webkit-transform: translateY(3px);
+	transform: translateY(3px);
+	-webkit-animation: none;
+	animation: none;
 }
 
-.tabs1 ul {
-    list-style: none;
+/* Functional */
+.tabs li > input:checked + label {
+	background-color: #002933
+}
+.tabs li > input:checked ~ .tab-content {
+	display:block;
+}
+
+.tabs2 {
+	list-style-type: none;
 	padding:0;
-		margin-right: 50px;
-		margin-left: 1150px;
-		margin-top: -500px;
+	margin:0;
+	margin-left: 10%;
+	margin-top: 10%;
+	position:relative;
 }
-.tabs1 ul li {
-    float: left;
-    background: #2182A3
-    border: 2px #175B72; solid;
-    border-bottom-width: 0;
-    margin: 0 0.5em 0 0;
-    padding: 5px;
+.tabs2:after {
+	content: "";
+	clear:both;
+	display:block;
+	height:242px;
 }
-.tabs1 a {
-	text-decoration: none;
-	display: block;
-	background: #000000;
-	padding: 0.10em 0.80em;
-	color: #145266;
-	width: 6em;
-	text-align: center;
+.tabs2 li {
+	float:left;
+	margin-top:0px;
+	margin-left:50px;
 }
-.tabs1 li a {
-	padding: 0 1em;
+.tabs2 li > input {
+display:none;
 }
-.tabs1 a:hover {
-	background: #52A3CC;
+.tabs2 li > label {
+	display:inline-block;
+	border:2px solid #2182A3;
+	border-bottom-width:0px;
+	height:30px;
+	line-height:30px;
+	padding: 5px 20px;
+	cursor:pointer;
 }
-.tabInner1 {
-    clear: both;
-    border: 2px solid #2182A3;
-		margin-right: 50px;
-		margin-left: 1150px;
-    height: 400px;
-	width: 650px;
-    overflow: hidden;
-    background: black;
-}
-.tabInner1 div {
-    height: 400px;
-    padding: 10px;
-    
+.tabs2 .tab-content2 {
+	display:none;
+	position:absolute;
+	left:0;
+	padding:15px;
+	border:2px solid #2182A3;
+	height:380px;
+	width:900px;
+	overflow-y:scroll;
 }
 
-#resources {
-    position: relative;
-    background: black;
-	border-style: solid;
-	border-color: #2182A3;
-   	border-width: 2.5px;
-			font-family: 'Anton', sans-serif;
-			font-size: 18px;
-		width: 12%;
-		left: 0%;
-		top: -404px;
-		height: 100%;
-	overflow: auto;
+/* Functional */
+.tabs2 li > input:checked + label {
+	background-color: #002933
 }
-.resource ul {
-    list-style: none;
-	padding-left: 10px;
-}
-
-#characterStats {
-    position: relative;
-    background: black;
-	border-style: solid;
-	border-color: #2182A3;
-   	border-width: 2.5px;
-			font-family: 'Anton', sans-serif;
-			font-size: 18px;		
-		width: 11%;
-		right: -920px;
-		top: -606px;
-	overflow: auto;
-}
-.characterstat ul {
-    list-style: none;
-	padding-left: 10px;
+.tabs2 li > input:checked ~ .tab-content2 {
+	display:block;
 }
 
 #storytext {
@@ -139,79 +174,9 @@ body{
 	border-style: solid;
 	border-color: #2182A3;
    	border-width: 2.5px;
-			font-family: 'Anton', sans-serif;
-			font-size: 18px;
 		width: 650px;
-		left: 258px;
-		bottom: 230px;
-		right: 300px;
-		top: 500px;
+		bottom: 50px;
+		right: 50px;
 		height: 200px;
 	overflow: auto;
-}
-
-#locations {
-	font-size: 18px;
-}
-
-.label {
-	display: inline;
-}
-
-.save {
-	text-decoration: none;
-	position: fixed;
-	display: inline;
-		width: 150px;
-		left: 1000px;
-		bottom: 700px;
-		right: 300px;
-		top: 0px;
-}
-.save a {
-	color: #145266;
-}
-
-a.tooltips {
-  position: relative;
-  display: inline;
-}
-a.tooltips span {
-  position: absolute;
-  width:175px;
-  color: #145266;
-  background: black;
-  border: 2px solid #145266;
-  height: 175px;
-  line-height: 22px;
-  text-align: center;
-  visibility: hidden;
-}
-a.tooltips span:before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  right: 100%;
-  margin-left: -12px;
-  width: 0; height: 0;
-}
-a.tooltips span:after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  right: 100%;
-  margin-left: -8px;
-  width: 0; height: 0;
-}
-a:hover.tooltips span {
-  visibility: visible;
-  left: 100%;
-  top: 50%;
-  margin-top: -11px;
-  margin-left: 15px;
-  z-index: 999;
-}
-
-.craft div {
-padding: 10px;
 }
