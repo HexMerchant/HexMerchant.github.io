@@ -9,117 +9,115 @@
 <body>
 
 <div class="save">
-<a href="#" onclick="saveGame();">Save</a>
-<a href="#" onclick="deleteSave();">Delete Save</a>
+	<a href="#" onclick="saveGame();">Save</a>
+	<a href="#" onclick="deleteSave();">Delete Save</a>
 </div>
 
-<div class="tabs">
-
-    <ul>
-		<li><a href="#locations">LOCATIONS</a></li>		
-        <li><a href="#crafting">CRAFTING</a></li>
-        <li><a href="#upgrades">UPGRADES</a></li>
-		<li><a href="#stats">STATS</a></li>
-    </ul>
-   
-<div class="tabInner">
-
-    <div id="locations">
-		<a class="tooltips" id="explore" href="#" onclick="exploreFunction();">Explore</a>
-		<a class="tooltips" id="wFS" href="#" onclick="wildernessForStamina();">Search Wilderness</a>
+	<div class="resources">
+		<p><font size="5.5">RESOURCES</font></p>
+			<ul>
+				<li><div class="label">STAMINA:</div>
+				<div id="stamina" class="label">100</div></li>
+					<li><div class="label">FLUX:</div>
+					<div id="flux" class="label">0</div></li>
+						<li><div class="label">STICK:</div>
+						<div id="stick" class="label">0</div></li>
+							<li><div class="label">ROCK:</div>
+							<div id="rock" class="label">0</div></li>
+								<li><div class="label">WOOD:</div>
+								<div id="wood" class="label">0</div></li>
+									<li><div id="bluntObjectName" style="display:none;" class="label">BLUNT OBJECT:</div>
+									<div id="bluntObjectValue" style="display:none;" class="label">0</div></li>
+			</ul>
 	</div>
-       
-	<div id="crafting" class="craft">
-        
-		<div id = "crafting">
-		<a class="tooltips" id="crafting1" href="#" onclick="craftWood();">Craft Wood<span>10 Sticks</span></a>
-		<a class="tooltips" id="crafting2" href="#" style="display:none;" onclick="craftBluntObject();">Blunt Object<span>13 Sticks</span></a>
-	</div>
-</div>
-		
-    </div>
-        
-	<div id="upgrades">
 
-    </div>
-		
-	<div id="stats">
-
-	</div>
-		
-    </div>
-</div>
-
-<div class="tabs1">
-
-    <ul>
-		<li><a href="#village">VILLAGE</a></li>	
-        <li><a href="#research">RESEARCH</a></li>
-        <li><a href="#profession">PROFESSION</a></li>
-		<li><a href="#achievements">ACHIEVEMENTS</a></li>
-    </ul>
-   
-<div class="tabInner1">
-
-	<div id="village">
-		
-	</div>
-       
-	<div id="research">
-        
-		<div id = "research1">
-		<a class="tooltips" href="#research" onclick="researchStick();">Research Stick
-		<span>Looks like a normal stick. I should research it more.</span></a>
+<ul class="tabs">
+	<li>
+		<input type="radio" name="tabs" id="tab-1" checked>
+		<label for ="tab-1">LOCATIONS</label>
+			
+		<div class="tab-content">
+			<button onclick="exploreFunction();">EXPLORE</button>
+			<button onclick="wildernessForStamina();">SEARCH WILDERNESS</button>
 		</div>
+	</li>
 		
-    </div>
-        
-	<div id="profession">
+	<li>
+		<input type="radio" name="tabs" id="tab-2">
+		<label for ="tab-2">CRAFTING</label>
+			
+		<div class="tab-content">
+				<button onclick ="craftWood();">CRAFT WOOD</br>Cost: 10 Sticks</button>
+				<button id="crafting2" onclick="craftBluntObject();">BLUNT OBJECT</br>Cost: 13 Sticks</button>
+		</div>
+	</li>
+		
+	<li>
+		<input type="radio" name="tabs" id="tab-3">
+		<label for ="tab-3">UPGRADES</label>
+		
+		<div class="tab-content">
+			<button id="upgrade1" onclick="upgradeStamina();">Stamina + 1</br> Costs</br> 100 Rock</br> 100 Stick</button>
+		</div>
+	</li>
+		
+	<li>
+		<input type="radio" name="tabs" id="tab-4">
+		<label for ="tab-4">ACTION</label>
+		
+		<div class="tab-content">
+		<p> ACTION STUFF GO HERE</p>
+		</div>
+	</li>			
+</ul>
 	
-    </div>
+	
+<ul class="tabs2">
+	<li>
+		<input type="radio" name="tabs2" id="tab2-1" checked>
+		<label for ="tab2-1">VILLAGE</label>
+			
+		<div class="tab-content2">
+			<p> VILLAGE STUFF GO HERE</p>
+		</div>
+	</li>
 		
-	<div id="achievements">
-
-	</div>
+	<li>
+		<input type="radio" name="tabs2" id="tab2-2">
+		<label for ="tab2-2">RESEARCH</label>
+			
+			<div class="tab-content2">
+				<button onclick="researchStick();">STICK</br>Cost: 20 Sticks</button>
+			</div>
+	</li>
 		
-    </div>
-</div>
-
-
-<div id="resources" class="resource">
-	<p><font size="5.5">RESOURCES</font></p>
-	<ul>
-		<li><div class="label">STAMINA:</div>
-		<div id="stamina" class="label">100</div></li>
-		<li><div class="label">FLUX:</div>
-		<div id="flux" class="label">0</div></li>
-		<li><div class="label">STICK:</div>
-		<div id="stick" class="label">0</div></li>
-		<li><div class="label">ROCK:</div>
-		<div id="rock" class="label">0</div></li>
-		<li><div class="label">WOOD:</div>
-		<div id="wood" class="label">0</div></li>
-		<li><div id="bluntObjectName" style="display:none;" class="label">BLUNT OBJECT:</div>
-		<div id="bluntObjectValue" style="display:none;" class="label">0</div></li>
-	</ul>
-</div>
-
-<div id="characterStats" class="characterstat">
-	<p><font size="5.5">CHARACTER STATS</font><p>
-	<ul>
-		<li><div class="label">HEALTH:</div>
-		<div id="health" class="label">50</div></li>
-		<li><div class="label">STRENGTH:</div>
-		<div id="strength" class="label">0</div></li>
-		<li><div class="label">INTELLIGENCE:</div>
-		<div id="intelligence" class="label">0</div></li>
-		<li><div class="label">POISE:</div>
-		<div id="poise" class="label">0</div></li>
-		<li><div class="label">SPEED:</div>
-		<div id="speed" class="label">0</div></li>
-	</ul>
-</div>
-
+	<li>
+		<input type="radio" name="tabs2" id="tab2-3">
+		<label for ="tab2-3">PROFESSION</label>
+			
+			<div class="tab-content2">
+				<p> PROFESSION STUFF GOES HERE</p>
+			</div>
+	</li>
+		
+	<li>
+		<input type="radio" name="tabs2" id="tab2-4">
+		<label for ="tab2-4">ACHIEVEMENTS</label>
+			<div class="tab-content2">
+				<p>ACHIEVEMENT STUFF GOES HERE</p>
+			</div>
+	</li>
+	
+	<li>
+		<input type="radio" name="tabs2" id="tab2-5">
+		<label for ="tab2-5">STATS</label>
+			<div class="tab-content2">
+				<p>Stats may in fact go here</p>		
+			</div>
+	</li>
+		
+</ul>
+	
 <div id="storytext">
 	<div id="story1"></div>
 </div>
