@@ -11,12 +11,15 @@ Make a profession
 Add a single stat "how many sticks have you gathered"
 
 */
+var copper = 0;
 var stick = 0;
 var rock = 0;
 var wood = 0;
 var bluntObjectValue = 0;
+var smellyObject = 0;
+var shinyObject = 0;
 
-var health = 50;
+var playerHealth = 70;
 var strength = 0;
 var intelligence = 0;
 var poise= 0;
@@ -25,6 +28,9 @@ var fire = 0;
 var water = 0;
 var earth = 0;
 var air = 0;
+
+var testEnemyHealth = 20;
+var testCreatureAttack = 1;
 
 var Timer = window.setInterval(function(){tick()}, 1000);
 var Timer = window.setInterval(function(){tickTwo()}, 1000);
@@ -36,6 +42,8 @@ of energy inside you.", "-You look around only to see a thicket of trees.", "-Yo
 
 var stamina = 100;
 var flux = 0;
+var alive = true;
+var enabled = true;
 
 var crafting1Name = "Craft Wood";
 var crafting1Cost = 10;
@@ -48,6 +56,7 @@ var research1Progress = 0;
 //SAVE CONTENT
 function saveGame() {
 var save = {
+playerHealth: playerHealth,
 stick: stick,
 rock: rock,
 wood: wood,
@@ -60,6 +69,7 @@ localStorage.setItem("save",JSON.stringify(save));
 }
 window.onload = function loadGame() {
 var savegame = JSON.parse(localStorage.getItem("save"));
+if (typeof savegame.playerHealth !== "undefined") playerHealth = savegame.playerHealth;
 if (typeof savegame.stick !== "undefined") stick = savegame.stick;
 if (typeof savegame.rock !== "undefined") rock = savegame.rock;
 if (typeof savegame.wood !== "undefined") wood = savegame.wood;
@@ -67,6 +77,7 @@ if (typeof savegame.stamina !== "undefined") stamina = savegame.stamina;
 if (typeof savegame.flux !== "undefined") flux = savegame.flux;
 if (typeof savegame.bluntObjectValue !== "undefined") bluntObjectValue = savegame.bluntObjectValue;
 if (typeof savegame.research1Progress !== "undefined") research1Progress = savegame.research1Progress;
+document.getElementById("playerHealth").innerHTML = playerHealth;
 document.getElementById("stick").innerHTML = stick;
 document.getElementById("rock").innerHTML = rock;
 document.getElementById("wood").innerHTML = wood;
@@ -187,7 +198,6 @@ else { document.getElementById(d).style.display = "none"; }
 }
 //Hide and Show Divs
 
-
 function researchStick() {
 	if (stick >= 1 && research1Progress < 100) {			// Want to be able to show progress
 	stick = stick - 1;										// each time you click me I want to use 1 stick
@@ -198,12 +208,45 @@ function researchStick() {
 	showInlineContent('crafting2');							// show crafting2
 	showInlineContent('bluntObjectName');
 	showInlineContent('bluntObjectValue');
+	document.getElementById("researchStick").disabled=true;
 	}
 	// when research hits 100 unlocks blunt object for crafting
 	// this clickable button should hide after completion
 	// add achievement for first research project
-
 }
+
+//function alertPlayer() {
+	//If player gets anything use this function
+	//
+//}
+
+// Enemy Functions
+window.setInterval(function testEnemy() {
+	if (testEnemyHealth > 1) {
+		playerHealth = playerHealth - testCreatureAttack;
+		document.getElementById("playerHealth").innerHTML = playerHealth;
+	}
+}, 500);
+
+function attackTestEnemy() {
+	if (testEnemyHealth >= 1 && stick > 1) {
+		stick = stick - 2;
+		testEnemyHealth = testEnemyHealth - 1;
+		document.getElementById("stick").innerHTML = stick;
+		document.getElementById("testEnemyHealth").innerHTML = testEnemyHealth;
+		}
+	
+	if (testEnemyHealth <= 0) {
+		copper = copper + 100;
+		smellyObject = smellyObject + 1;
+		shinyObject = shinyObject + 1;
+		document.getElementById("copper").innerHTML = copper;
+		document.getElementById("smellyObject").innerHTML = smellyObject;
+		document.getElementById("shinyObject").innerHTML = shinyObject;
+		document.getElementById("testEnemyHealth").innerHTML = testEnemyHealth;
+	}
+}
+
 
 window.setInterval(function() {
 
