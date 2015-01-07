@@ -37,8 +37,7 @@ body{
 	list-style-type: none;
 	padding:1;
 	margin:0;
-	margin-top: 10px;
-	margin-left: 12%;
+	margin-left: 220px;
 	position:relative;
 }
 .tabs:after {
@@ -122,8 +121,8 @@ button:active
 	list-style-type: none;
 	padding:0;
 	margin:0;
-	margin-left: 12%;
-	margin-top: 10%;
+	margin-left: 220px;
+	margin-top: 190px;
 	position:relative;
 }
 .tabs2:after {
@@ -169,15 +168,15 @@ display:none;
 }
 
 #storytext {
-    position: fixed;
+    position: relative;
     background: black;
 	border-style: solid;
 	border-color: #2182A3;
    	border-width: 2.5px;
-		width: 650px;
-		bottom: 50px;
-		right: 50px;
+		width: 500px;
 		height: 200px;
+		left: 1350px;
+		bottom: 20px;
 	overflow: auto;
 }
 
