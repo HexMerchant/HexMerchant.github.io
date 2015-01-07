@@ -19,7 +19,7 @@ var bluntObjectValue = 0;
 var smellyObject = 0;
 var shinyObject = 0;
 
-var playerHealth = 70;
+var playerWellness = 70;
 var strength = 0;
 var intelligence = 0;
 var poise= 0;
@@ -56,34 +56,46 @@ var research1Progress = 0;
 //SAVE CONTENT
 function saveGame() {
 var save = {
-playerHealth: playerHealth,
+playerWellness: playerWellness,
 stick: stick,
 rock: rock,
 wood: wood,
 stamina: stamina,
 flux: flux,
+copper: copper,
 bluntObjectValue: bluntObjectValue,
+smellyObject: smellyObject,
+shinyObject: shinyObject,
+testEnemyHealth: testEnemyHealth,
 research1Progress: research1Progress
 	}
 localStorage.setItem("save",JSON.stringify(save));
 }
 window.onload = function loadGame() {
 var savegame = JSON.parse(localStorage.getItem("save"));
-if (typeof savegame.playerHealth !== "undefined") playerHealth = savegame.playerHealth;
+if (typeof savegame.playerWellness !== "undefined") playerWellness = savegame.playerWellness;
 if (typeof savegame.stick !== "undefined") stick = savegame.stick;
 if (typeof savegame.rock !== "undefined") rock = savegame.rock;
 if (typeof savegame.wood !== "undefined") wood = savegame.wood;
 if (typeof savegame.stamina !== "undefined") stamina = savegame.stamina;
 if (typeof savegame.flux !== "undefined") flux = savegame.flux;
+if (typeof savegame.copper !== "undefined") copper = savegame.copper;
 if (typeof savegame.bluntObjectValue !== "undefined") bluntObjectValue = savegame.bluntObjectValue;
+if (typeof savegame.smellyObject !== "undefined") smellyObject = savegame.smellyObject;
+if (typeof savegame.shinyObject !== "undefined") shinyObject = savegame.shinyObject;
+if (typeof savegame.testEnemyHealth !== "undefined") testEnemyHealth = savegame.testEnemyHealth;
 if (typeof savegame.research1Progress !== "undefined") research1Progress = savegame.research1Progress;
-document.getElementById("playerHealth").innerHTML = playerHealth;
-document.getElementById("stick").innerHTML = stick;
-document.getElementById("rock").innerHTML = rock;
-document.getElementById("wood").innerHTML = wood;
-document.getElementById("stamina").innerHTML = stamina;
-document.getElementById("flux").innerHTML = flux;
-document.getElementById("bluntObjectValue").innerHTML = bluntObjectValue;
+	document.getElementById("playerWellness").innerHTML = playerWellness;
+	document.getElementById("stick").innerHTML = stick;
+	document.getElementById("rock").innerHTML = rock;
+	document.getElementById("wood").innerHTML = wood;
+	document.getElementById("stamina").innerHTML = stamina;
+	document.getElementById("flux").innerHTML = flux;
+	document.getElementById("bluntObjectValue").innerHTML = bluntObjectValue;
+	document.getElementById("copper").innerHTML = copper;
+	document.getElementById("smellyObject").innerHTML = smellyObject;
+	document.getElementById("shinyObject").innerHTML = shinyObject;
+	document.getElementById("testEnemyHealth").innerHTML = testEnemyHealth;
 showInlineContent('crafting2');
 showInlineContent('bluntObjectName');
 showInlineContent('bluntObjectValue');
@@ -176,10 +188,16 @@ function upgradeStamina () {
 	if (stick >= upgrade1Cost && rock >= upgrade1Cost) {
 		stick = stick - upgrade1Cost;
 		rock = rock - upgrade1Cost;
+			window.setInterval(function plus1Stamina() {
+				if (stamina < 100) {
+				stamina = stamina + 1;
+				document.getElementById("stamina").innerHTML = stamina;
+			}
+				}, 1000);
 			document.getElementById("stick").innerHTML = stick;
 			document.getElementById("rock").innerHTML = rock;
 			document.getElementById("stamina").innerHTML = stamina;
-	}
+	}	
 }
 
 //Hide and Show Divs
@@ -223,8 +241,8 @@ function researchStick() {
 // Enemy Functions
 window.setInterval(function testEnemy() {
 	if (testEnemyHealth > 1) {
-		playerHealth = playerHealth - testCreatureAttack;
-		document.getElementById("playerHealth").innerHTML = playerHealth;
+		playerWellness = playerWellness - testCreatureAttack;
+		document.getElementById("playerWellness").innerHTML = playerWellness;
 	}
 }, 500);
 
