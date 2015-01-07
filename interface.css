@@ -1,8 +1,8 @@
 body{
 	font-family: 'Anton', sans-serif;
 	font-size: 22px;
-	background: black;
-	color: #145266;
+	background: #331F00;
+	color: #478FB2;
 }
 
 .save {
@@ -122,7 +122,7 @@ button:active
 	padding:0;
 	margin:0;
 	margin-left: 220px;
-	margin-top: 190px;
+	margin-top: 180px;
 	position:relative;
 }
 .tabs2:after {
@@ -169,17 +169,37 @@ display:none;
 
 #storytext {
     position: relative;
-    background: black;
+    background: #331F00;
 	border-style: solid;
 	border-color: #2182A3;
    	border-width: 2.5px;
 		width: 500px;
 		height: 200px;
 		left: 1350px;
-		bottom: 20px;
+		bottom: 40px;
 	overflow: auto;
 }
 
 img {
 	display: inline-block;
 }
+
+::-webkit-scrollbar {
+      width: 15px;
+} /* this targets the default scrollbar (compulsory) */
+
+::-webkit-scrollbar-track {
+      background-color: #145266;
+} /* the new scrollbar will have a flat appearance with the set background color */
+ 
+::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.2); 
+} /* this will style the thumb, ignoring the track */
+ 
+::-webkit-scrollbar-button {
+      background-color: #2182A3;
+} /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
+ 
+::-webkit-scrollbar-corner {
+      background-color: black;
+} /* if both the vertical and the horizontal bars appear, then perhaps the right bottom corner also needs to be styled */
