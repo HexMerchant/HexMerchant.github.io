@@ -16,26 +16,14 @@
 	<div class="resources">
 		<p><font size="5.5">RESOURCES</font></p>
 			<ul>
-				<li><div class="label"><img src="http://fc01.deviantart.net/fs71/f/2011/342/0/e/palmia_icon_1_5_by_faria4-d4ijdbb.png">HEALTH:</div>
-				<div id="playerHealth" class="label">70</div></li>
+				<li><div class="label"><img src="http://fc01.deviantart.net/fs71/f/2011/342/0/e/palmia_icon_1_5_by_faria4-d4ijdbb.png">WELLNESS:</div>
+				<div id="playerWellness" class="label">70</div></li>
 					<li><div class="label"><img src="http://fc00.deviantart.net/fs71/f/2011/342/d/a/palmia_icon_1_1_by_faria4-d4ijdhu.png">STAMINA:</div>
 					<div id="stamina" class="label">100</div></li>
 						<li><div class="label"><img src="http://fc00.deviantart.net/fs71/f/2011/342/9/e/palmia_icon_1_2_by_faria4-d4ijcvl.png">FLUX:</div>
 						<div id="flux" class="label">0</div></li>
 							<li><div class="label"><img src="http://fc01.deviantart.net/fs71/f/2011/342/0/e/palmia_icon_1_5_by_faria4-d4ijdbb.png">COPPER:</div>
 							<div id="copper" class="label">0</div></li>
-								<li><div class="label"><img src="http://fc06.deviantart.net/fs70/f/2011/342/c/7/palmia_icon_1_3_by_faria4-d4ijd0g.png">STICK:</div>
-								<div id="stick" class="label">0</div></li>
-									<li><div class="label"><img src="http://fc04.deviantart.net/fs71/f/2011/342/2/7/palmia_icon_1_4_by_faria4-d4ijd4g.png">ROCK:</div>
-									<div id="rock" class="label">0</div></li>
-										<li><div class="label"><img src="http://fc01.deviantart.net/fs71/f/2011/342/0/e/palmia_icon_1_5_by_faria4-d4ijdbb.png">WOOD:</div>
-										<div id="wood" class="label">0</div></li>
-											<li><div id="bluntObjectName" style="display:none;" class="label">BLUNT OBJECT:</div>
-											<div id="bluntObjectValue" style="display:none;" class="label">0</div></li>
-												<li><div class="label"><img src="http://fc01.deviantart.net/fs71/f/2011/342/0/e/palmia_icon_1_5_by_faria4-d4ijdbb.png">SMELLY OBJECT:</div>
-												<div id="smellyObject" class="label">0</div></li>
-													<li><div class="label"><img src="http://fc01.deviantart.net/fs71/f/2011/342/0/e/palmia_icon_1_5_by_faria4-d4ijdbb.png">SHINY OBJECT:</div>
-													<div id="shinyObject" class="label">0</div></li>
 			</ul>
 	</div>
 
@@ -74,11 +62,40 @@
 		<label for ="tab-4">ACTION</label>
 		
 		<div class="tab-content">
-		<button onclick ="attackTestEnemy();">Attack Test Enemy 1</br>Uses sticks</button>
-		<li><div class="label"><img src="http://fc01.deviantart.net/fs71/f/2011/342/0/e/palmia_icon_1_5_by_faria4-d4ijdbb.png">ENEMY HEALTH:</div>
-				<div id="testEnemyHealth" class="label">20</div></li>
+			<button onclick ="attackTestEnemy();">Attack Test Enemy 1</br>Uses sticks</button>
+		<div class="label"><img src="http://fc01.deviantart.net/fs71/f/2011/342/0/e/palmia_icon_1_5_by_faria4-d4ijdbb.png">ENEMY HEALTH:</div>
+				<div id="testEnemyHealth" class="label">20</div>
 		</div>
-	</li>			
+	</li>
+
+	<li>
+		<input type="radio" name="tabs" id="tab-5">
+		<label for ="tab-5">INVENTORY</label>
+		
+		<div class="tab-content">
+			<p>COMMON</p>
+				<div class="label"><img src="http://fc00.deviantart.net/fs71/f/2011/342/d/a/palmia_icon_1_1_by_faria4-d4ijdhu.png">STICK:</div>
+				<div id="stick" class="label">0</div>
+					<div class="label"><img src="http://fc00.deviantart.net/fs71/f/2011/342/d/a/palmia_icon_1_1_by_faria4-d4ijdhu.png">ROCK:</div>
+					<div id="rock" class="label">0</div>
+			<p>UNCOMMON</p>
+			
+			<p>RARE</p>
+			
+			<p>PURPLE</p>
+				<div class="label"><img src="http://fc04.deviantart.net/fs71/f/2011/342/2/7/palmia_icon_1_4_by_faria4-d4ijd4g.png">WOOD:</div>
+				<div id="wood" class="label">0</div>
+			
+			<p>UNKNOWN</p>
+				<div class="label"><img src="http://fc01.deviantart.net/fs71/f/2011/342/0/e/palmia_icon_1_5_by_faria4-d4ijdbb.png">SMELLY OBJECT:</div>
+				<div id="smellyObject" class="label">0</div>
+					<div class="label"><img src="http://fc01.deviantart.net/fs71/f/2011/342/0/e/palmia_icon_1_5_by_faria4-d4ijdbb.png">SHINY OBJECT:</div>
+					<div id="shinyObject" class="label">0</div>	
+						<div id="bluntObjectName" style="display:none;" class="label"><img src="http://fc01.deviantart.net/fs71/f/2011/342/0/e/palmia_icon_1_5_by_faria4-d4ijdbb.png">BLUNT OBJECT:</div>
+						<div id="bluntObjectValue" style="display:none;" class="label">0</div>	
+			
+		</div>
+	</li>		
 </ul>
 	
 	
